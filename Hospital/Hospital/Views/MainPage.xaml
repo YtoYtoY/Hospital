@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Hospital.CustomeRenderer"
+             mc:Ignorable="d"
+             x:Class="Hospital.Views.MainPage">
+
+    <StackLayout Padding="0">
+        <Grid>
+            <!--Upper Background-->
+            <StackLayout Padding="0" Margin="0">
+                <Frame BackgroundColor="#02bfa9" HeightRequest="130" HorizontalOptions="FillAndExpand">
+                </Frame>
+            </StackLayout>
+            
+            <!--Main 'Sing In' Block-->
+            <StackLayout Margin="15,110,15,0">
+                <Frame BackgroundColor="White" HasShadow="True" HeightRequest="580" HorizontalOptions="FillAndExpand">
+                    
+                    <StackLayout>
+                        
+                        <!--Sing In Label-->
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="SIGN IN" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                        </StackLayout>
+                        
+                        
+                        <StackLayout Margin="0,25,0,0">
+                            <!--Email or Login TextBox-->
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        
+                                    </Frame>
+                                    <local:MyCustomEntry Placeholder="Email Or Login" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <!--Password TextBox-->
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,20,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    </Frame>
+                                    <local:MyCustomEntry Placeholder="Password" IsPassword="True" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox IsChecked="False" Color="#02bfa9"/>
+                            <Label Text="Remember me" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <Label Text="Forgot Password" HorizontalTextAlignment="End" TextColor="HotPink" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Button Text="SIGN IN" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+
+                        
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="Still Not Connected?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Text="Sing Up" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        
+                        <StackLayout>
+                            <Grid>
+                                <BoxView BackgroundColor="DarkGray" HeightRequest="1" Margin="50" HorizontalOptions="FillAndExpand" WidthRequest="130"/>
+                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="OR" TextColor="DarkGray" FontSize="Small" HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                </Frame>
+                            </Grid>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray">
+                                    <Image Source="https://flyclipart.com/thumb2/facebook-logo-transparent-png-pictures-743973.png" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
+
+                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray">
+                                    <Image Source="https://blog.hubspot.com/hubfs/image8-2.jpg" Aspect="AspectFill" Margin="0"/>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                        
+                        
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
