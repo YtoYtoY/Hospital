@@ -10,7 +10,6 @@ namespace Hospital
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 

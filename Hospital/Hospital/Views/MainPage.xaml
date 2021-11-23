@@ -11,6 +11,7 @@
             <!--Upper Background-->
             <StackLayout Padding="0" Margin="0">
                 <Frame BackgroundColor="#02bfa9" HeightRequest="130" HorizontalOptions="FillAndExpand">
+                    <Image BackgroundColor="Transparent" Source="https://img.icons8.com/emoji/48/000000/plus-emoji.png" Margin="0,0,0,50" />
                 </Frame>
             </StackLayout>
             
@@ -32,7 +33,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
                                     </Frame>
-                                    <local:MyCustomEntry Placeholder="Email Or Login" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry x:Name="YourLogin" Placeholder="Email Or Login" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
 
@@ -41,18 +42,20 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
                                     </Frame>
-                                    <local:MyCustomEntry Placeholder="Password" IsPassword="True" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry x:Name="YourPassword" Placeholder="Password" IsPassword="True" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
 
                         
                         <StackLayout Orientation="Horizontal">
-                            <CheckBox IsChecked="False" Color="#02bfa9"/>
-                            <Label Text="Remember me" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            <CheckBox IsChecked="False" Color="#02bfa9" CheckedChanged="PasswordCheckBox_CheckedChanged"/>
+
+
+                            <Label Text="Show password" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                             <Label Text="Forgot Password" HorizontalTextAlignment="End" TextColor="HotPink" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         </StackLayout>
-                        <Button Text="SIGN IN" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30" Command="{Binding GoToMenuValidation}"/>
+                        <Button Clicked="Button_Clicked" Text="SIGN IN" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
 
                         
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -65,7 +68,7 @@
                             </Label>
                         </StackLayout>
 
-                        <!--<StackLayout>
+                        <StackLayout>
                             <Grid>
                                 <BoxView BackgroundColor="DarkGray" HeightRequest="1" Margin="50" HorizontalOptions="FillAndExpand" WidthRequest="130"/>
                                 <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
@@ -73,16 +76,14 @@
                                 </Frame>
                             </Grid>
 
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray">
-                                    <Image Source="https://flyclipart.com/thumb2/facebook-logo-transparent-png-pictures-743973.png" Aspect="AspectFill" Margin="0"/>
-                                </Frame>
-
-                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray">
-                                    <Image Source="https://blog.hubspot.com/hubfs/image8-2.jpg" Aspect="AspectFill" Margin="0"/>
-                                </Frame>
-                            </StackLayout>
-                        </StackLayout>-->
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    </Frame>
+                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
                         
                         
                     </StackLayout>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Hospital.Views
         public MenuPage()
         {
             InitializeComponent();
+            this.BindingContext = new MenuPageViewModel();
         }
     }
 }

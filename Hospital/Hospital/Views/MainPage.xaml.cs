@@ -19,5 +19,15 @@ namespace Hospital.Views
             this.BindingContext = new MainPageViewModel();
         }
 
+        private void PasswordCheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            YourPassword.IsPassword = !YourPassword.IsPassword;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushModalAsync(new MenuPage());
+            // TODO: Проверить пользователя на подлиность. Вывести модальное окно в случае отказа. Доп проверки
+        }
     }
 }

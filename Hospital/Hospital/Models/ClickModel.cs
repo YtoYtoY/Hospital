@@ -11,12 +11,12 @@ namespace Hospital.Models
 
         public void OnClick(ContentPage page)
         {
-            App.Current.MainPage.Navigation.PushModalAsync(page);
+            Application.Current.MainPage.Navigation.PushModalAsync(page);
         }
 
         public void Reset()
         {
-            
+            Application.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }

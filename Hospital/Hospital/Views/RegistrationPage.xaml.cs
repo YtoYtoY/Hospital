@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hospital.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,13 @@ namespace Hospital.Views
         public RegistrationPage()
         {
             InitializeComponent();
+            this.BindingContext = new RegistrationPageViewModel();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new MenuPage());
+            // TODO: Проверки на корректность введённых данных. Доп проверки. 
         }
     }
 }

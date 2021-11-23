@@ -14,20 +14,13 @@ namespace Hospital.ViewModels
         public ICommand GoToRegistration { get; private set; }
         public ICommand GoToMenuValidation { get; private set; }
 
-        public string ClicksCount
-        {
-            get
-            {
-                return "";
-            }
-        }
         public MainPageViewModel()
         {
             GoToRegistration = new Command(OnButtonClick_ToRegistration);
-            clickModel = new ClickModel();
 
             GoToMenuValidation = new Command(OnButtonClick_ToMenu);
             clickModel = new ClickModel();
+
         }
 
         private void OnButtonClick_ToRegistration()
