@@ -10,13 +10,17 @@ using Xamarin.Forms.Xaml;
 
 namespace Hospital.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuPage : ContentPage
+    public partial class MenuPage : MasterDetailPage
     {
         public MenuPage()
         {
             InitializeComponent();
+            this.Master = new Master();
+            this.Detail = new NavigationPage(new Detail());
+
+            App.MasterDetail = this;
+
             this.BindingContext = new MenuPageViewModel();
-        }
+        } 
     }
 }

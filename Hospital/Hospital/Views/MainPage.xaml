@@ -10,8 +10,8 @@
         <Grid>
             <!--Upper Background-->
             <StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="#02bfa9" HeightRequest="130" HorizontalOptions="FillAndExpand">
-                    <Image BackgroundColor="Transparent" Source="https://img.icons8.com/emoji/48/000000/plus-emoji.png" Margin="0,0,0,50" />
+                <Frame BackgroundColor="#02bfa9" HeightRequest="170" HorizontalOptions="FillAndExpand">
+                    <Image BackgroundColor="Transparent" Source="Hospital.png" Margin="0,0,0,50"/>
                 </Frame>
             </StackLayout>
             
@@ -23,28 +23,43 @@
                         
                         <!--Sing In Label-->
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="SING IN"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="SIGN IN"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
                         </StackLayout>
-                        
-                        
+
+
                         <StackLayout Margin="0,25,0,0">
-                            <!--Email or Login TextBox-->
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbLogin" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="User1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="YourLogin" Placeholder="Email Or Login" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+
+                                    <local:MyCustomEntry TextChanged="YourLogin_TextChanged" x:Name="YourLogin" Placeholder="Email Or Login" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                                    <Frame x:Name="LoginFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+                                    
                                 </StackLayout>
                             </Frame>
 
-                            <!--Password TextBox-->
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,20,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbPassword" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,10,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="Password1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="YourPassword" Placeholder="Password" IsPassword="True" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    
+                                    <local:MyCustomEntry TextChanged="YourPassword_TextChanged" x:Name="YourPassword" Placeholder="Password" IsPassword="True" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+                                    
+                                    <Frame x:Name="PassFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+                                    
                                 </StackLayout>
                             </Frame>
+                            
                         </StackLayout>
 
                         
@@ -61,9 +76,19 @@
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="Still Not Connected?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
 
-                            <Label Text="Sing Up" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
+                            <Label Text="Sign Up" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding GoToRegistration}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+                            <Label Text="or" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="Login as 'Guest'" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LoginAsGuest}"/>
                                 </Label.GestureRecognizers>
                             </Label>
                         </StackLayout>
@@ -78,11 +103,13 @@
 
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="6">
+                                        <Image Source="Ticket1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
+                            
                         </StackLayout>
                         
                         

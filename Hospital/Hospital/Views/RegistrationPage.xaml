@@ -9,71 +9,111 @@
 
     <StackLayout Padding="0">
         <Grid>
-            <!--Upper Background-->
+
             <StackLayout Padding="0" Margin="0">
-                <Frame BackgroundColor="#02bfa9" HeightRequest="130" HorizontalOptions="FillAndExpand">
-                    <Image BackgroundColor="Transparent" Source="https://img.icons8.com/emoji/48/000000/plus-emoji.png" Margin="0,0,0,50" />
+                <Frame BackgroundColor="#02bfa9" HeightRequest="170" HorizontalOptions="FillAndExpand">
+                    <Image BackgroundColor="Transparent" Source="Hospital.png" Margin="0,0,0,50" />
                 </Frame>
             </StackLayout>
 
-            <!--Main 'Sing In' Block-->
             <StackLayout Margin="15,110,15,0">
-                <Frame BackgroundColor="White" HasShadow="True" HeightRequest="580" HorizontalOptions="FillAndExpand">
+                <Frame BackgroundColor="White" HasShadow="True" HeightRequest="620" HorizontalOptions="FillAndExpand">
 
                     <StackLayout>
 
 
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="SING UP"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="SIGN UP"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
                         </StackLayout>
 
 
                         <StackLayout Margin="0,25,0,0">
 
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbLogin" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="User1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="YourName" Placeholder="Name" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+
+                                    <local:MyCustomEntry TextChanged="YourLogin_TextChanged" x:Name="YourLogin" Placeholder="Your Nickname or Login" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                                    <Frame x:Name="LoginFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
                                 </StackLayout>
                             </Frame>
 
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbPasportNumber" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,10,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="Pasport1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="YourSurname" Placeholder="Surname" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+
+                                    <local:MyCustomEntry TextChanged="PasportNumber_TextChanged"  x:Name="PasportNumber" Placeholder="Pasport Number" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                                    <Frame x:Name="PasNumFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
                                 </StackLayout>
                             </Frame>
 
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbEmail" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,10,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="Email1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="PasportNumber" Placeholder="Pasport Number" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+
+                                    <local:MyCustomEntry TextChanged="Email_TextChanged"  x:Name="Email" Placeholder="Email" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                                    <Frame x:Name="EmailFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
                                 </StackLayout>
                             </Frame>
 
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbPassword" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,10,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="Password1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="Email" Placeholder="Email" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+
+                                    <local:MyCustomEntry TextChanged="YourPassword_TextChanged"  x:Name="YourPassword" Placeholder="Password" IsPassword="True" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                                    <Frame x:Name="PassFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
                                 </StackLayout>
                             </Frame>
 
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                            <Frame x:Name="tbPasswordAgain" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,10,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                        <Image Source="Password1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="Password" Placeholder="Password" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+
+                                    <local:MyCustomEntry x:Name="YourPasswordAgain" Placeholder="Password again" IsPassword="True" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                                    <Frame x:Name="PassAgainFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
+                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
                                 </StackLayout>
                             </Frame>
+
                         </StackLayout>
 
 
                         <StackLayout Orientation="Horizontal">
-                            <CheckBox IsChecked="False" Color="#02bfa9"/>
+                            <CheckBox IsChecked="False" Color="#02bfa9" CheckedChanged="CheckBox_CheckedChanged"/>
                             <Label Text="Show password" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </StackLayout>
                         <Button Clicked="Button_Clicked" Text="SIGN UP" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
@@ -81,7 +121,7 @@
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="Already have an account?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                            <Label Text="Sing Up" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
+                            <Label Text="Sign In" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding GoToLogin}"/>
                                 </Label.GestureRecognizers>
@@ -99,11 +139,13 @@
 
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="6">
+                                        <Image Source="Ticket1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
+                            
                         </StackLayout>
 
 
@@ -112,4 +154,5 @@
             </StackLayout>
         </Grid>
     </StackLayout>
+    
 </ContentPage>

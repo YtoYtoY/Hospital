@@ -13,12 +13,14 @@ namespace Hospital.ViewModels
         private ITransportClickModel clickModel;
         public ICommand GoToRegistration { get; private set; }
         public ICommand GoToMenuValidation { get; private set; }
+        public ICommand LoginAsGuest { get; private set; }
+
 
         public MainPageViewModel()
         {
             GoToRegistration = new Command(OnButtonClick_ToRegistration);
-
             GoToMenuValidation = new Command(OnButtonClick_ToMenu);
+            LoginAsGuest = new Command(OnButtonClick_AsGuest);
             clickModel = new ClickModel();
 
         }
@@ -31,7 +33,12 @@ namespace Hospital.ViewModels
 
         private void OnButtonClick_ToMenu()
         {
-            clickModel.OnClick(new MenuPage());
+            
+        }
+
+        private void OnButtonClick_AsGuest()
+        {
+
         }
     }
 }

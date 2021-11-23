@@ -7,10 +7,12 @@ namespace Hospital
 {
     public partial class App : Application
     {
+        public static MasterDetailPage MasterDetail { get; set; }
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            MainPage = new MenuPage();
+            MainPage.Navigation.PushModalAsync(new MainPage());
         }
 
         protected override void OnStart()
