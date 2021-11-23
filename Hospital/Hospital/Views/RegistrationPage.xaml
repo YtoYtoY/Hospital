@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Hospital.CustomeRenderer"
              mc:Ignorable="d"
-             x:Class="Hospital.Views.MainPage">
+             x:Class="Hospital.Views.RegistrationPage">
+
 
     <StackLayout Padding="0">
         <Grid>
@@ -13,57 +14,75 @@
                 <Frame BackgroundColor="#02bfa9" HeightRequest="130" HorizontalOptions="FillAndExpand">
                 </Frame>
             </StackLayout>
-            
+
             <!--Main 'Sing In' Block-->
             <StackLayout Margin="15,110,15,0">
                 <Frame BackgroundColor="White" HasShadow="True" HeightRequest="580" HorizontalOptions="FillAndExpand">
-                    
+
                     <StackLayout>
-                        
-                        <!--Sing In Label-->
+
+
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="SING IN"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                            <Label Text="SING UP"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
                         </StackLayout>
-                        
-                        
+
+
                         <StackLayout Margin="0,25,0,0">
-                            <!--Email or Login TextBox-->
+
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
                                     <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
                                     </Frame>
-                                    <local:MyCustomEntry Placeholder="Email Or Login" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry Placeholder="Name" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
 
-                            <!--Password TextBox-->
                             <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,20,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
                                 <StackLayout Orientation="Horizontal">
                                     <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
                                     </Frame>
-                                    <local:MyCustomEntry Placeholder="Password" IsPassword="True" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry Placeholder="Surname" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    </Frame>
+                                    <local:MyCustomEntry Placeholder="Pasport Number" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    </Frame>
+                                    <local:MyCustomEntry Placeholder="Email" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="AliceBlue" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                                    </Frame>
+                                    <local:MyCustomEntry Placeholder="Password" TextColor="#00dbc2" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
 
-                        
+
                         <StackLayout Orientation="Horizontal">
                             <CheckBox IsChecked="False" Color="#02bfa9"/>
                             <Label Text="Remember me" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
-                            <Label Text="Forgot Password" HorizontalTextAlignment="End" TextColor="HotPink" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         </StackLayout>
-                        <Button Text="SIGN IN" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30" Command="{Binding GoToMenuValidation}"/>
+                        <Button Text="SIGN UP" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
 
-                        
+
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="Still Not Connected?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-
-                            <Label Text="Sing Up" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding GoToRegistration}"/>
-                                </Label.GestureRecognizers>
-                            </Label>
+                            <Label Text="Already have an account?" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Text="Sing In" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         </StackLayout>
+
 
                         <!--<StackLayout>
                             <Grid>
@@ -83,12 +102,11 @@
                                 </Frame>
                             </StackLayout>
                         </StackLayout>-->
-                        
-                        
+
+
                     </StackLayout>
                 </Frame>
             </StackLayout>
         </Grid>
     </StackLayout>
-
 </ContentPage>

@@ -11,7 +11,7 @@ namespace Hospital
         {
             InitializeComponent();
 
-            MainPage = new LanguagePage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

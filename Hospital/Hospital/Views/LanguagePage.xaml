@@ -15,21 +15,37 @@
                 </Frame>
             </StackLayout>
 
-            <!--Main 'Sing In' Block-->
+            <!--Main Block-->
             <StackLayout Margin="15,110,15,0">
+                
                 <Frame BackgroundColor="White" HasShadow="True" HeightRequest="580" HorizontalOptions="FillAndExpand">
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray">
-                            <Image Source="https://flyclipart.com/thumb2/facebook-logo-transparent-png-pictures-743973.png" Aspect="AspectFill" Margin="0"/>
-                        </Frame>
 
-                        <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="50" HeightRequest="50" CornerRadius="30" HasShadow="False" BorderColor="DarkGray">
-                            <Image Source="https://blog.hubspot.com/hubfs/image8-2.jpg" Aspect="AspectFill" Margin="0"/>
-                        </Frame>
+                    <StackLayout>
+
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Select a language pack" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="90" HeightRequest="90" CornerRadius="50" HasShadow="False" BorderColor="DarkGray">
+                                    <ImageButton Source="https://img.icons8.com/color/50/000000/russian-federation-circular.png" Aspect="AspectFill" Margin="0" Clicked="ChangeLangToRU_Clicked"/>
+                                </Frame>
+
+                                <Frame BackgroundColor="White" Padding="0" Margin="0" WidthRequest="90" HeightRequest="90" CornerRadius="50" HasShadow="False" BorderColor="DarkGray">
+                                    <ImageButton Source="https://img.icons8.com/color/48/000000/usa-circular.png" Aspect="AspectFill" Margin="0" Clicked="ChangeLangToENG_Clicked"/>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+
                     </StackLayout>
-                    
+
                 </Frame>
+            </StackLayout>
+
+            <StackLayout>
+                
             </StackLayout>
         </Grid>
     </StackLayout>
