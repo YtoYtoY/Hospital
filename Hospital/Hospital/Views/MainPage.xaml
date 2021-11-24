@@ -65,12 +65,12 @@
                         
                         <StackLayout Orientation="Horizontal">
                             <CheckBox IsChecked="False" Color="#02bfa9" CheckedChanged="PasswordCheckBox_CheckedChanged"/>
-
-
                             <Label Text="Show password" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                            
                             <Label Text="Forgot Password" HorizontalTextAlignment="End" TextColor="HotPink" HorizontalOptions="EndAndExpand" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         </StackLayout>
-                        <Button Clicked="Button_Clicked" Text="SIGN IN" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+                        <Button Clicked="btnSingIn_Clicked" Text="SIGN IN" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+                        <Button Clicked="btnAsGuest_Clicked" Text="AS GUEST" BorderColor="#02bfa9" BorderWidth="2" BackgroundColor="Transparent" TextColor="#02bfa9" FontAttributes="Bold" CornerRadius="30"/>
 
                         
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -82,16 +82,16 @@
                                 </Label.GestureRecognizers>
                             </Label>
 
-                            <Label Text="or" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <!--<Label Text="or" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>-->
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="Login as 'Guest'" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding LoginAsGuest}"/>
                                 </Label.GestureRecognizers>
                             </Label>
-                        </StackLayout>
+                        </StackLayout>-->
 
                         <StackLayout>
                             <Grid>

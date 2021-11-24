@@ -25,7 +25,7 @@ namespace Hospital.Views
             YourPassword.IsPassword = !YourPassword.IsPassword;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void btnSingIn_Clicked(object sender, EventArgs e)
         {
             LoginFailedImg.Opacity = 1;
             tbLogin.BorderColor = Color.Red;
@@ -45,6 +45,11 @@ namespace Hospital.Views
         {
             PassFailedImg.Opacity = 0;
             tbPassword.BorderColor = Color.DarkGray;
+        }
+
+        private void btnAsGuest_Clicked(object sender, EventArgs e)
+        {
+            // Guest
         }
 
     }

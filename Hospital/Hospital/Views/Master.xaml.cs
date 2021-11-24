@@ -25,18 +25,22 @@ namespace Hospital.Views
 
         private async void btnProcedure_Clicked(object sender, EventArgs e)
         {
-
+            App.MasterDetail.IsPresented = false;
         }
 
         private async void btnMedCard_Clicked(object sender, EventArgs e)
         {
-
+            App.MasterDetail.IsPresented = false;
         }
 
         private async void btnSettings_Clicked(object sender, EventArgs e)
         {
-
+            App.MasterDetail.IsPresented = false;
         }
 
+        private async void btnExit_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDetail.IsPresented = false;
+        }
     }
 }

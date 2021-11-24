@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Hospital.Custom_Controls.IconButton">
+    
+    <ContentView.Content>
+        <Frame CornerRadius="50" x:Name="ibFrame" HorizontalOptions="Center" VerticalOptions="Start"
+                Margin="5" HasShadow="True" Padding="15" WidthRequest="300" HeightRequest="30" >
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="Transparent" x:Name="stack">
+                <Image x:Name="btnIcon" HeightRequest="30" WidthRequest="30" HorizontalOptions="Start"
+                        BackgroundColor="Transparent" Margin="15,0,15,0"/>
+                <Label x:Name="btnText" HorizontalOptions="Start" TextColor="White" BackgroundColor="Transparent"
+                        FontSize="20"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
