@@ -13,8 +13,9 @@ namespace Hospital.Custom_Controls
     public partial class IconButton : ContentView
     {
         public event EventHandler Clicked;
+
         public static readonly BindableProperty ButtonText
-        = BindableProperty.Create(nameof(Text), typeof(string), typeof(IconButton));
+            = BindableProperty.Create(nameof(Text), typeof(string), typeof(IconButton));
 
         public string Text
         {
@@ -41,12 +42,29 @@ namespace Hospital.Custom_Controls
         }
 
         public static readonly BindableProperty TxtColor
-        = BindableProperty.Create(nameof(TextColor), typeof(string), typeof(IconButton), "#000");
+            = BindableProperty.Create(nameof(TextColor), typeof(string), typeof(IconButton), "#000");
 
         public string TextColor
         {
             get => (string)GetValue(TxtColor);
-            set => SetValue(TxtColor, value);
+            set
+            {
+                SetValue(TxtColor, value);
+                btnText.TextColor = Color.White;
+            }
+        }
+
+        public static readonly BindableProperty TxtColorBlack
+            = BindableProperty.Create(nameof(TextColor), typeof(string), typeof(IconButton), "Black");
+
+        public string TextColorBlack
+        {
+            get => (string)GetValue(TxtColorBlack);
+            set
+            {
+                SetValue(TxtColorBlack, value);
+                btnText.TextColor = Color.Black;
+            }
         }
 
         public static readonly BindableProperty CommandProperty = BindableProperty.Create(nameof(Command),

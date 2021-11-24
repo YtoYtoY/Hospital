@@ -21,23 +21,33 @@ namespace Hospital.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            LoginFailedImg.Opacity = 1;
-            tbLogin.BorderColor = Color.Red;
+            if (YourLogin.Text != "1") // TODO: Проверки на корректность введённых данных. Доп проверки. 
+            {
+                LoginFailedImg.Opacity = 1;
+                tbLogin.BorderColor = Color.Red;
 
-            PasNumFailedImg.Opacity = 1;
-            tbPasportNumber.BorderColor = Color.Red;
+                PasNumFailedImg.Opacity = 1;
+                tbPasportNumber.BorderColor = Color.Red;
 
-            EmailFailedImg.Opacity = 1;
-            tbEmail.BorderColor = Color.Red;
+                EmailFailedImg.Opacity = 1;
+                tbEmail.BorderColor = Color.Red;
 
-            PassFailedImg.Opacity = 1;
-            tbPassword.BorderColor = Color.Red;
+                PassFailedImg.Opacity = 1;
+                tbPassword.BorderColor = Color.Red;
 
-            PassAgainFailedImg.Opacity = 1;
-            tbPasswordAgain.BorderColor = Color.Red;
-            Application.Current.MainPage.Navigation.PopModalAsync();
-            Application.Current.MainPage.Navigation.PopModalAsync();
-            // TODO: Проверки на корректность введённых данных. Доп проверки. 
+                PassAgainFailedImg.Opacity = 1;
+                tbPasswordAgain.BorderColor = Color.Red;
+            }
+            else if (ContainsBanCharacters())
+            {
+                Application.Current.MainPage.Navigation.PopModalAsync();
+                Application.Current.MainPage.Navigation.PopModalAsync();
+            }
+        }
+
+        private bool ContainsBanCharacters()
+        {
+            return true;
         }
 
         private void YourLogin_TextChanged(object sender, TextChangedEventArgs e)

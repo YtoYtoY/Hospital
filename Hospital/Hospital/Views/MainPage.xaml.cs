@@ -13,7 +13,6 @@ namespace Hospital.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-
         public MainPage()
         {
             InitializeComponent();
@@ -27,12 +26,18 @@ namespace Hospital.Views
 
         private async void btnSingIn_Clicked(object sender, EventArgs e)
         {
-            LoginFailedImg.Opacity = 1;
-            tbLogin.BorderColor = Color.Red;
-            PassFailedImg.Opacity = 1;
-            tbPassword.BorderColor = Color.Red;
-            await Application.Current.MainPage.Navigation.PopModalAsync();
-            // TODO: Проверить пользователя на подлиность. Вывести модальное окно в случае отказа. Доп проверки
+            if (YourLogin.Text != "1") // TODO: Проверить пользователя на подлиность. Доп проверки
+            {
+                LoginFailedImg.Opacity = 1;
+                tbLogin.BorderColor = Color.Red;
+
+                PassFailedImg.Opacity = 1;
+                tbPassword.BorderColor = Color.Red;
+            }
+            else
+            {
+                await Application.Current.MainPage.Navigation.PopModalAsync();
+            }
         }
 
         private void YourLogin_TextChanged(object sender, TextChangedEventArgs e)

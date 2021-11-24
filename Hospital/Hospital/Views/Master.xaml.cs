@@ -17,25 +17,30 @@ namespace Hospital.Views
             InitializeComponent();
         }
 
+        private void btnMedCard_Clicked(object sender, EventArgs e)
+        {
+            App.MasterDetail.IsPresented = false;
+
+        }
+
+
+
         private async void btnSchedule_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
-            //await App.MasterDetail.Detail.Navigation.PushAsync(new Page);
+            await App.MasterDetail.Detail.Navigation.PushAsync(new MedicalCard());
         }
 
         private async void btnProcedure_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
-        }
-
-        private async void btnMedCard_Clicked(object sender, EventArgs e)
-        {
-            App.MasterDetail.IsPresented = false;
+            await App.MasterDetail.Detail.Navigation.PushAsync(new MedicalCard());
         }
 
         private async void btnSettings_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
+            await App.MasterDetail.Detail.Navigation.PushAsync(new MedicalCard());
         }
 
         private async void btnExit_Clicked(object sender, EventArgs e)

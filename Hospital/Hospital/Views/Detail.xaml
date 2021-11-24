@@ -7,10 +7,67 @@
              x:Class="Hospital.Views.Detail">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="Name" TextColor="Black" Margin="10" FontSize="20" />
+                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1"/>
+
+                <Label Text="Surname" TextColor="Black" Margin="10" FontSize="20" Grid.Row="1"/>
+                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+
+                <Label Text="Birth date" TextColor="Black" Margin="10" FontSize="20" Grid.Row="2"/>
+                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+
+                <Label Text="Address" TextColor="Black" Margin="10" FontSize="20" Grid.Row="3"/>
+                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+
+            </Grid>
+
+            <StackLayout>
+                <Frame BorderColor="Black" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Label Text="Doctor" TextColor="DarkGray" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="Speciality" TextColor="DarkGray" Grid.Row="0" Grid.Column="1"/>
+                        <Label Text="Date" TextColor="DarkGray" Grid.Row="0" Grid.Column="2"/>
+
+                        <StackLayout x:Name="dgvAppointments">
+                            
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Command="{Binding GetResponse}"/>
+            </StackLayout>
+            
+            <StackLayout>
+                <Label Text="{Binding Response}" TextColor="Black"/>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -6,6 +6,5 @@
              mc:Ignorable="d"
              x:Class="Hospital.Views.MenuPage">
 
-        
     
 </MasterDetailPage>

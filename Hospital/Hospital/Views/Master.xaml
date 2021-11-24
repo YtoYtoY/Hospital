@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:controls="clr-namespace:Hospital.Custom_Controls"
+             xmlns:controls="clr-namespace:Hospital.Custom_Controls"
              mc:Ignorable="d"
              x:Class="Hospital.Views.Master"
              BackgroundColor="White"
@@ -11,35 +11,38 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <StackLayout HeightRequest="140">
-                <Frame BackgroundColor="Transparent">
-                    <Grid ColumnDefinitions="2">
-                        <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="45" WidthRequest="45" HorizontalOptions="Start" Padding="0" Margin="0">
-                            <Image Source="User1.png" Aspect="AspectFill" Margin="0"/>
-                        </Frame>
-                        <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="45"  WidthRequest="200" Padding="0" BorderColor="#02bfa9" Margin="50,0,0,0">
-                            <Label Text="Login" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="15"/>
-                        </Frame>
-                    </Grid>
-                </Frame>
+
+            <StackLayout HeightRequest="20">
+                <Frame BackgroundColor="Transparent"/>
             </StackLayout>
             
+            <controls:IconButton Image="MedicalCard.png" Text="Medical Card" x:Name="btnMedCard" HorizontalOptions="Fill"
+                        FrameBackgroundColor="White" TextColorBlack="Black" Clicked="btnMedCard_Clicked"/>
+            
+            <StackLayout HeightRequest="140">
+                <Frame BackgroundColor="Transparent"/>
+            </StackLayout>
 
-            <controls:IconButton Image="MedicalCard.png" Text="Medical card" x:Name="btnMedCard" HorizontalOptions="Fill"
-                    TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnMedCard_Clicked"/>
 
-            <controls:IconButton Image="DoctorsSchedule.png" Text="Doctor's schedule" x:Name="btnSchedule" HorizontalOptions="Fill"
-                    TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnSchedule_Clicked"/>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <controls:IconButton Image="DoctorsSchedule.png" Text="Doctor's schedule" x:Name="btnSchedule" HorizontalOptions="Fill"
+                TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnSchedule_Clicked"/>
 
-            <controls:IconButton Image="OrderProcedure.png" Text="Order a procedure" x:Name="btnProcedure" HorizontalOptions="Fill"
-                    TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnProcedure_Clicked"/>
+                <controls:IconButton Image="OrderProcedure.png" Text="Order a procedure" x:Name="btnProcedure" HorizontalOptions="Fill"
+                TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnProcedure_Clicked"/>
 
-            <controls:IconButton Image="Settings.png" Text="Settings" x:Name="btnSettings" HorizontalOptions="Fill"
+                <controls:IconButton Image="Settings.png" Text="Settings" x:Name="btnSettings" HorizontalOptions="Fill"
                     TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnSettings_Clicked"/>
+
+                <Frame BackgroundColor="Transparent" HeightRequest="20"/>
+            </StackLayout>
+
 
             <controls:IconButton Image="Exit.png" Text="EXIT" x:Name="btnExit" HorizontalOptions="Fill" 
                     TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnExit_Clicked" VerticalOptions="EndAndExpand"/>
 
+            
+            
             <StackLayout HeightRequest="20">
                 <Frame BackgroundColor="Transparent"/>
             </StackLayout>
