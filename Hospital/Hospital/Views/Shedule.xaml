@@ -14,7 +14,7 @@
                         <Image Source="User1.png" Aspect="AspectFill" Margin="0"/>
                     </Frame>
 
-                    <local:MyCustomEntry x:Name="YourLogin" Placeholder="Enter the name of the doctor" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+                    <local:MyCustomEntry x:Name="Name" Placeholder="Enter the name of the doctor" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
 
                 </StackLayout>
             </Frame>

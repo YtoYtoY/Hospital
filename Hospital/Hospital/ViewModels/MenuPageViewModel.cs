@@ -21,7 +21,7 @@ namespace Hospital.ViewModels
 
         private void OnButtonClick_GetResponse()
         {
-            clickModel.OnClick();
+            clickModel.OnClick("#322228");
             Response = clickModel.Response;
             NotyfyPropertyChanged(nameof(Response));
 

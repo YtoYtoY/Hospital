@@ -1,5 +1,8 @@
-﻿using Hospital.Services;
+﻿using Hospital.DataBase;
+using Hospital.Services;
+using Hospital.Services.Entitties;
 using Hospital.ViewModels;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,18 +30,48 @@ namespace Hospital.Views
 
         private async void btnSingIn_Clicked(object sender, EventArgs e)
         {
-            if (YourLogin.Text != "1") // TODO: Проверить пользователя на подлиность. Доп проверки
+            List<User> list = new List<User>();
+            try
             {
-                LoginFailedImg.Opacity = 1;
-                tbLogin.BorderColor = Color.Red;
+                await App.Database.CreateTable<User>();
+                if (YourLogin.Text == null || YourPassword.Text == null)
+                {
+                    LoginFailedImg.Opacity = 1;
+                    tbLogin.BorderColor = Color.Red;
 
-                PassFailedImg.Opacity = 1;
-                tbPassword.BorderColor = Color.Red;
+                    PassFailedImg.Opacity = 1;
+                    tbPassword.BorderColor = Color.Red;
+                }
+                else if (YourLogin.Text == "1" || YourPassword.Text == "1")
+                {
+                    CurrentUser.EnterAsUser(new User { Id = -1, Level = 2, Login = null, Mail = null, MedCardId = default, Passport = null, Password = null });
+                    await Application.Current.MainPage.Navigation.PopModalAsync();
+                }
+                else if ((list = await App.Database.GetItemsAsync<User>()).Count != 0)
+                {
+                    foreach(var item in list)
+                    {
+                        if (item.Login.GetHashCode() == YourLogin.Text.GetHashCode() && 
+                            item.Password.GetHashCode() == YourPassword.Text.GetHashCode())
+                        {
+                            CurrentUser.EnterAsUser(item);
+                            await Application.Current.MainPage.Navigation.PopModalAsync();
+                            break;
+                        }
+                    }
+                    LoginFailedImg.Opacity = 1;
+                    tbLogin.BorderColor = Color.Red;
+
+                    PassFailedImg.Opacity = 1;
+                    tbPassword.BorderColor = Color.Red;
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                await Application.Current.MainPage.Navigation.PopModalAsync();
+                throw new Exception(ex.Message);
             }
+
         }
 
         private void YourLogin_TextChanged(object sender, TextChangedEventArgs e)

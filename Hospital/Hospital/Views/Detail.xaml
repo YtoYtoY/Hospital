@@ -21,16 +21,16 @@
                     </Grid.RowDefinitions>
 
                     <Label Text="Name" TextColor="Black" Margin="10" FontSize="18" />
-                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1"/>
+                    <Label Text="-----" x:Name="Name" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1"/>
 
                     <Label Text="Surname" TextColor="Black" Margin="10" FontSize="18" Grid.Row="1"/>
-                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="1"/>
+                    <Label Text="-----" x:Name="Surname" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="1"/>
 
                     <Label Text="Birth date" TextColor="Black" Margin="10" FontSize="18" Grid.Row="2"/>
-                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="2"/>
+                    <Label Text="-----" x:Name="Birth" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="2"/>
 
                     <Label Text="Address" TextColor="Black" Margin="10" FontSize="18" Grid.Row="3"/>
-                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="3"/>
+                    <Label Text="-----" x:Name="Address" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="3"/>
 
                 </Grid>
 

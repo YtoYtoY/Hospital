@@ -93,22 +93,6 @@
                                 </StackLayout>
                             </Frame>
 
-                            <Frame x:Name="tbPasswordAgain" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0,10,0,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
-                                <StackLayout Orientation="Horizontal">
-
-                                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
-                                        <Image Source="Password1.png" Aspect="AspectFill" Margin="0"/>
-                                    </Frame>
-
-                                    <local:MyCustomEntry x:Name="YourPasswordAgain" Placeholder="Password again" IsPassword="True" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
-
-                                    <Frame x:Name="PassAgainFailedImg" BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" Padding="0" Margin="7" Opacity="0">
-                                        <Image Source="https://img.icons8.com/ios-glyphs/60/fa314a/macos-close.png" Aspect="AspectFill" Margin="0"/>
-                                    </Frame>
-
-                                </StackLayout>
-                            </Frame>
-
                         </StackLayout>
 
 
@@ -117,6 +101,7 @@
                             <Label Text="Show password" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
                         </StackLayout>
                         <Button Clicked="Button_Clicked" Text="SIGN UP" BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+                        <Button Clicked="ButtonAsGuest_Clicked" Text="AS GUEST" BorderColor="#02bfa9" BorderWidth="2" BackgroundColor="Transparent" TextColor="#02bfa9" FontAttributes="Bold" CornerRadius="30"/>
 
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -142,7 +127,7 @@
                                     <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="6">
                                         <Image Source="Ticket1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry x:Name="FastCode" Placeholder="Input fast registration code" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                             

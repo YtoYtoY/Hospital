@@ -1,6 +1,7 @@
 ﻿using Hospital.Services.Entitties;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Hospital.Services
@@ -19,5 +20,7 @@ namespace Hospital.Services
             CurUser.Mail = null;
             CurUser.Level = -1;
         }
+        public static FileStream htmlfile { get; set; }
+
     }
 }

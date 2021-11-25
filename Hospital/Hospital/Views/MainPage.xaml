@@ -8,20 +8,18 @@
 
     <StackLayout Padding="0">
         <Grid>
-            <!--Upper Background-->
+
             <StackLayout Padding="0" Margin="0">
                 <Frame BackgroundColor="#02bfa9" HeightRequest="170" HorizontalOptions="FillAndExpand">
                     <Image BackgroundColor="Transparent" Source="Hospital.png" Margin="0,0,0,50"/>
                 </Frame>
             </StackLayout>
             
-            <!--Main 'Sing In' Block-->
             <StackLayout Margin="15,110,15,0">
                 <Frame BackgroundColor="White" HasShadow="True" HeightRequest="580" HorizontalOptions="FillAndExpand">
                     
                     <StackLayout>
                         
-                        <!--Sing In Label-->
                         <StackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="SIGN IN"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
                         </StackLayout>
@@ -106,7 +104,7 @@
                                     <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="6">
                                         <Image Source="Ticket1.png" Aspect="AspectFill" Margin="0"/>
                                     </Frame>
-                                    <local:MyCustomEntry x:Name="UltraCode" Placeholder="Input fast registration code" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
+                                    <local:MyCustomEntry x:Name="FastCode" Placeholder="Input fast registration code" TextColor="Black" HorizontalOptions="FillAndExpand" Margin="0,0,15,0"/>
                                 </StackLayout>
                             </Frame>
                             
