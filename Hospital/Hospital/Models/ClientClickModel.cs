@@ -9,9 +9,9 @@ namespace Hospital.Models
     class ClientClickModel : IClientClickModel
     {
         public string Response { get; set; }
-        public void OnClick()
+        public void OnClick(string code)
         {
-            Response = TcpClient.GetResponse("#322228");
+            Response = TcpClient.GetResponse(code);
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Hospital.ViewModels
     {
         private IClientClickModel clickModel;
         public ICommand GetResponse { get; private set; }
-
         public string Response { get; private set; }
 
         public MenuPageViewModel()

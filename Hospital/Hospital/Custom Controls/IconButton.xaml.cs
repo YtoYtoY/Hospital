@@ -41,6 +41,15 @@ namespace Hospital.Custom_Controls
             set => SetValue(BgColor, value);
         }
 
+        public static readonly BindableProperty BordColor
+        = BindableProperty.Create(nameof(BorderColor), typeof(string), typeof(IconButton), "#fff");
+
+        public string BorderColor
+        {
+            get => (string)GetValue(BordColor);
+            set => SetValue(BordColor, value);
+        }
+
         public static readonly BindableProperty TxtColor
             = BindableProperty.Create(nameof(TextColor), typeof(string), typeof(IconButton), "#000");
 
@@ -84,6 +93,7 @@ namespace Hospital.Custom_Controls
             get => (object)GetValue(CommandPropertyParam);
             set => SetValue(CommandPropertyParam, value);
         }
+
         public IconButton()
         {
             InitializeComponent();
@@ -107,7 +117,7 @@ namespace Hospital.Custom_Controls
             btnIcon.Source = Image;
             btnText.Text = Text;
             ibFrame.BackgroundColor = Color.FromHex(FrameBackgroundColor);
-
+            ibFrame.BorderColor = Color.FromHex(BorderColor);
             stack.BackgroundColor = Color.FromHex(FrameBackgroundColor);
             btnText.BackgroundColor = Color.FromHex(FrameBackgroundColor);
             btnIcon.BackgroundColor = Color.FromHex(FrameBackgroundColor);

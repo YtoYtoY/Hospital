@@ -20,7 +20,6 @@ namespace Hospital.Views
         private void btnMedCard_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
-
         }
 
 
@@ -28,24 +27,25 @@ namespace Hospital.Views
         private async void btnSchedule_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
-            await App.MasterDetail.Detail.Navigation.PushAsync(new MedicalCard());
+            await App.MasterDetail.Detail.Navigation.PushAsync(new Shedule());
         }
 
         private async void btnProcedure_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
-            await App.MasterDetail.Detail.Navigation.PushAsync(new MedicalCard());
+            await App.MasterDetail.Detail.Navigation.PushAsync(new Procedure());
         }
 
         private async void btnSettings_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
-            await App.MasterDetail.Detail.Navigation.PushAsync(new MedicalCard());
+            await App.MasterDetail.Detail.Navigation.PushAsync(new Settings());
         }
 
-        private async void btnExit_Clicked(object sender, EventArgs e)
+        private void btnExit_Clicked(object sender, EventArgs e)
         {
             App.MasterDetail.IsPresented = false;
+            System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();
         }
     }
 }

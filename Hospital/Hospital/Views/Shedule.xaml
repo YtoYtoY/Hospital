@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Hospital.CustomeRenderer"
+             mc:Ignorable="d"
+             x:Class="Hospital.Views.Shedule">
+    <ContentPage.Content>
+        <StackLayout Margin="15,15,15,10">
+            <Frame x:Name="tbName" BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+
+                    <Frame BackgroundColor="Transparent" CornerRadius="50" HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" Padding="0" Margin="7">
+                        <Image Source="User1.png" Aspect="AspectFill" Margin="0"/>
+                    </Frame>
+
+                    <local:MyCustomEntry x:Name="YourLogin" Placeholder="Enter the name of the doctor" TextColor="#02bfa9" HorizontalOptions="FillAndExpand" Margin="0,0,15,0" MaxLength="50"/>
+
+                </StackLayout>
+            </Frame>
+            <Button Text="Find Doctors" Clicked="Button_Clicked"  BackgroundColor="#02bfa9" TextColor="White" FontAttributes="Bold" CornerRadius="30"/>
+
+            <Label Text="{Binding DoctorName}" x:Name="lblDacName" IsVisible="False"/>
+
+            <ScrollView>
+                <Frame x:Name="VisibleBox" IsVisible="False">
+                    <StackLayout x:Name="dgvAppointment"/>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -15,9 +15,9 @@
             <StackLayout HeightRequest="20">
                 <Frame BackgroundColor="Transparent"/>
             </StackLayout>
-            
+
             <controls:IconButton Image="MedicalCard.png" Text="Medical Card" x:Name="btnMedCard" HorizontalOptions="Fill"
-                        FrameBackgroundColor="White" TextColorBlack="Black" Clicked="btnMedCard_Clicked"/>
+                        FrameBackgroundColor="White" TextColorBlack="Black" Clicked="btnMedCard_Clicked" BorderColor="#02bfa9"/>
             
             <StackLayout HeightRequest="140">
                 <Frame BackgroundColor="Transparent"/>

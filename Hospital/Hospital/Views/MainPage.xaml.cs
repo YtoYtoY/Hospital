@@ -1,4 +1,5 @@
-﻿using Hospital.ViewModels;
+﻿using Hospital.Services;
+using Hospital.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,9 +53,10 @@ namespace Hospital.Views
             tbPassword.BorderColor = Color.DarkGray;
         }
 
-        private void btnAsGuest_Clicked(object sender, EventArgs e)
+        private async void btnAsGuest_Clicked(object sender, EventArgs e)
         {
-            // Guest
+            CurrentUser.EnterAsGuest();
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
     }

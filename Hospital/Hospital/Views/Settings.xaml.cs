@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Hospital.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MedicalCard : ContentPage
+    public partial class Settings : ContentPage
     {
-        public MedicalCard()
+        public Settings()
         {
             InitializeComponent();
         }

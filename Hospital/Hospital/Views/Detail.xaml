@@ -7,67 +7,59 @@
              x:Class="Hospital.Views.Detail">
 
     <ContentPage.Content>
-        <StackLayout >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                </Grid.ColumnDefinitions>
+        <ScrollView>
+            <StackLayout x:Name="AllContent">
+                <Grid Margin="20,15,20,0" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
 
-                <Label Text="Name" TextColor="Black" Margin="10" FontSize="20" />
-                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1"/>
+                    <Label Text="Name" TextColor="Black" Margin="10" FontSize="18" />
+                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1"/>
 
-                <Label Text="Surname" TextColor="Black" Margin="10" FontSize="20" Grid.Row="1"/>
-                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1" Grid.Row="1"/>
+                    <Label Text="Surname" TextColor="Black" Margin="10" FontSize="18" Grid.Row="1"/>
+                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="1"/>
 
-                <Label Text="Birth date" TextColor="Black" Margin="10" FontSize="20" Grid.Row="2"/>
-                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1" Grid.Row="2"/>
+                    <Label Text="Birth date" TextColor="Black" Margin="10" FontSize="18" Grid.Row="2"/>
+                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="2"/>
 
-                <Label Text="Address" TextColor="Black" Margin="10" FontSize="20" Grid.Row="3"/>
-                <Label Text="-----" TextColor="Black" Margin="10" FontSize="20" Grid.Column="1" Grid.Row="3"/>
+                    <Label Text="Address" TextColor="Black" Margin="10" FontSize="18" Grid.Row="3"/>
+                    <Label Text="-----" TextColor="DarkGray" Margin="10" FontSize="18" Grid.Column="1" Grid.Row="3"/>
 
-            </Grid>
+                </Grid>
 
-            <StackLayout>
-                <Frame BorderColor="Black" >
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                            <ColumnDefinition Width="0.5*"/>
-                        </Grid.ColumnDefinitions>
+                <StackLayout>
+                    <Frame BorderColor="Black" >
+                        <Grid Margin="15" Padding="0" x:Name="dgvAppointment">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
 
 
-                        <Label Text="Doctor" TextColor="DarkGray" Grid.Row="0" Grid.Column="0"/>
-                        <Label Text="Speciality" TextColor="DarkGray" Grid.Row="0" Grid.Column="1"/>
-                        <Label Text="Date" TextColor="DarkGray" Grid.Row="0" Grid.Column="2"/>
+                            <Label Text="Doctor" TextColor="DarkGray" Grid.Row="0"/>
+                            <Label Text="Speciality" TextColor="DarkGray" Grid.Row="0" Grid.Column="1"/>
+                            <Label Text="Date" TextColor="DarkGray" Grid.Row="0" Grid.Column="2"/>
 
-                        <StackLayout x:Name="dgvAppointments">
-                            
-                        </StackLayout>
-                    </Grid>
-                </Frame>
+
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
             </StackLayout>
-
-            <StackLayout>
-                <Button Command="{Binding GetResponse}"/>
-            </StackLayout>
-            
-            <StackLayout>
-                <Label Text="{Binding Response}" TextColor="Black"/>
-            </StackLayout>
-            
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

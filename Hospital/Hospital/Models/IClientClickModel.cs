@@ -6,7 +6,7 @@ namespace Hospital.Models
 {
     public interface IClientClickModel
     {
-        void OnClick();
+        void OnClick(string code);
         string Response { get; set; }
     }
 }
