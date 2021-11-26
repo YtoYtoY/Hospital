@@ -18,12 +18,5 @@ namespace Hospital.Services.Entitties
         [Column("diagn_info")]
         public string Info { get; set; }
 
-        public void SetData(SqliteDataReader reader)
-        {
-            Id = Convert.ToInt32(reader.GetValue(0));
-            CardId = Convert.ToInt32(reader.GetValue(1));
-            Title = reader.GetValue(2).ToString();
-            Info = reader.GetValue(3).ToString();
-        }
     }
 }

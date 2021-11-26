@@ -11,7 +11,7 @@ namespace Hospital.Models
         public string Response { get; set; }
         public void OnClick(string code)
         {
-           var obj = TcpClient.GetResponse(code);
+           var obj = Client.GetResponse(code);
         }
     }
 }

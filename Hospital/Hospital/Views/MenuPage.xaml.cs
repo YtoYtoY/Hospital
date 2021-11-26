@@ -1,4 +1,5 @@
-﻿using Hospital.ViewModels;
+﻿using Hospital.Services;
+using Hospital.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,14 @@ namespace Hospital.Views
 {
     public partial class MenuPage : MasterDetailPage
     {
+        
         public MenuPage()
         {
             InitializeComponent();
             this.Master = new Master();
-            this.Detail = new NavigationPage(new Detail());
+            var detail = new Detail();
+            CurrentUser.start += detail.Start;
+            this.Detail = new NavigationPage(detail);
 
             App.MasterDetail = this;
 

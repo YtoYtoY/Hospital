@@ -24,7 +24,8 @@
 
             <ScrollView>
                 <Frame x:Name="VisibleBox" IsVisible="False">
-                    <StackLayout x:Name="dgvAppointment"/>
+                    <StackLayout x:Name="dgvAppointment">
+                    </StackLayout>
                 </Frame>
             </ScrollView>
         </StackLayout>

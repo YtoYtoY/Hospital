@@ -4,18 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Hospital.Views.Procedure">
+             x:Class="Hospital.Views.WebViewPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Your Diagnoses" HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="Black"/>
+            <Label Text="Web page" HorizontalOptions="Center" TextColor="Black" FontSize="18"></Label>
+            <WebView x:Name="Web" Source="{Binding src}">
 
-        
-            <ScrollView>
-                <Frame x:Name="VisibleBox">
-                    <StackLayout x:Name="dgvDiagnosis">
-                    </StackLayout>
-                </Frame>
-            </ScrollView>
+            </WebView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

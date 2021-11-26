@@ -1,5 +1,6 @@
 ﻿using Hospital.DataBase;
 using Hospital.Services;
+using Hospital.Services.Client;
 using Hospital.Services.Entitties;
 using Hospital.ViewModels;
 using Microsoft.Data.Sqlite;
@@ -33,7 +34,15 @@ namespace Hospital.Views
             List<User> list = new List<User>();
             try
             {
-                await App.Database.CreateTable<User>();
+                if (FastCode.Text != null)
+                {
+                    var page = Client.GetResponse(FastCode.Text);
+                    if (page[0] == 't' && page[4] == ':')
+                    {
+                        page.Remove(0, 5);
+                        await Application.Current.MainPage.Navigation.PushModalAsync(new WebViewPage(page));
+                    }
+                }
                 if (YourLogin.Text == null || YourPassword.Text == null)
                 {
                     LoginFailedImg.Opacity = 1;
@@ -55,6 +64,8 @@ namespace Hospital.Views
                             item.Password.GetHashCode() == YourPassword.Text.GetHashCode())
                         {
                             CurrentUser.EnterAsUser(item);
+
+                            CurrentUser.start?.Invoke();
                             await Application.Current.MainPage.Navigation.PopModalAsync();
                             break;
                         }

@@ -8,6 +8,5 @@ namespace Hospital.Services.Entitties
     public interface IEntity
     {
         int Id { get; set; }
-        void SetData(SqliteDataReader reader);
     }
 }

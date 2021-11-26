@@ -27,10 +27,11 @@ namespace Hospital.Views
             List<User> list = new List<User>();
             if (FastCode.Text != null)
             {
-                var page = TcpClient.GetResponse(FastCode.Text);
-                if (page == "Code html")
+                var page = Client.GetResponse(FastCode.Text);
+                if (page[0] == 't' && page[4] == ':')
                 {
-                    await Application.Current.MainPage.Navigation.PushModalAsync(null);
+                    page.Remove(0, 5);
+                    await Application.Current.MainPage.Navigation.PushModalAsync(new WebViewPage(page));
                 }
             }
             if (YourLogin.Text == null)
@@ -59,7 +60,7 @@ namespace Hospital.Views
             }
             else if (YourLogin.Text == "1" || YourPassword.Text == "1")
             {
-                CurrentUser.EnterAsUser(new User { Id = -1, Level = 2, Login = null, Mail = null, MedCardId = 0, Passport = null, Password = null });
+                CurrentUser.EnterAsUser(new User { Id = -1, Level = 2, Login = "Admin", Mail = "Admin", MedCardId = 0, Passport = "Admin", Password = "Admin" });
                 await Application.Current.MainPage.Navigation.PopModalAsync();
                 await Application.Current.MainPage.Navigation.PopModalAsync();
                 return;
@@ -86,6 +87,7 @@ namespace Hospital.Views
                     }
                 }
                 CurrentUser.EnterAsUser(new User { Level = 1, Login = YourLogin.Text, Mail = Email.Text, MedCardId = 0, Passport = PasportNumber.Text, Password = YourPassword.Text });
+                
                 await App.Database.SaveItemAsyn<User>(CurrentUser.CurUser);
                 await Application.Current.MainPage.Navigation.PopModalAsync();
                 return;

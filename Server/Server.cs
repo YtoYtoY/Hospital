@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -10,56 +9,55 @@ namespace Server
 {
     public class Server
     {
-        static int port = 8888;
-        static void Main(string[] args)
+        public static void Main()
         {
-            IPEndPoint ipPoint = new IPEndPoint(IPAddress.Parse("192.168.11.2"), port);
-            Socket listenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
             try
             {
-                listenSocket.Bind(ipPoint);
-                listenSocket.Listen(10);
+                IPAddress ipAd = IPAddress.Parse("192.168.207.2");
+                TcpListener myList = new TcpListener(ipAd, 8008);
 
-                Console.WriteLine("The server is running. Waiting for connections...");
+                myList.Start();
 
+                Console.WriteLine("The server is running at port 8888...");
+                Console.WriteLine("The local End point is  :" +
+                                  myList.LocalEndpoint);
+                Console.WriteLine("Waiting for a connection.....");
                 while (true)
                 {
-                    Socket handler = listenSocket.Accept();
-                    // Get message
+                    Socket s = myList.AcceptSocket();
+                    Console.WriteLine("Connection accepted from " + s.RemoteEndPoint);
 
-                    StringBuilder builder = new StringBuilder();
-                    int bytes = 0;
-                    byte[] data = new byte[256];
+                    byte[] b = new byte[100];
+                    int k = s.Receive(b);
+                    Console.WriteLine("Recieved...");
 
-                    do
+                    string file = "";
+                    string html = "";
+                    for (int i = 0; i < k; i++)
+                        file += Convert.ToChar(b[i]);
+                    Console.WriteLine(file);
+
+                    ASCIIEncoding asen = new ASCIIEncoding();
+                    if (file == "#123456.html")
                     {
-                        bytes = handler.Receive(data);
-                        builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                    }
-                    while (handler.Available > 0);
-
-                    Console.WriteLine(DateTime.Now.ToShortTimeString() + ": " + builder.ToString());
-                    if (builder.ToString() == "#322228")
-                    {
-                        string messageCode = "Code html";
-                        data = Encoding.Unicode.GetBytes(messageCode);
-                        handler.Send(data);
+                        using (StreamReader sr = new StreamReader(@"E:\Work\Startup\Hospital\Server\" + file))
+                        {
+                            html = sr.ReadToEnd();
+                        }
+                        s.Send(asen.GetBytes("true:" + html));
                     }
                     else
                     {
-                        string message = "your message has been delivered";
-                        data = Encoding.Unicode.GetBytes(message);
-                        handler.Send(data);
+                        s.Send(asen.GetBytes("null"));
                     }
-                    handler.Shutdown(SocketShutdown.Both);
-                    handler.Close();
-
+                    s.Close();
                 }
+                myList.Stop();
+
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Error..... " + e.StackTrace);
             }
         }
     }

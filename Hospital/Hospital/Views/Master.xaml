@@ -28,7 +28,7 @@
                 <controls:IconButton Image="DoctorsSchedule.png" Text="Doctor's schedule" x:Name="btnSchedule" HorizontalOptions="Fill"
                 TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnSchedule_Clicked"/>
 
-                <controls:IconButton Image="OrderProcedure.png" Text="Order a procedure" x:Name="btnProcedure" HorizontalOptions="Fill"
+                <controls:IconButton Image="OrderProcedure.png" Text="Your diagnoses" x:Name="btnProcedure" HorizontalOptions="Fill"
                 TextColor="White" FrameBackgroundColor="#02bfa9" Clicked="btnProcedure_Clicked"/>
 
                 <controls:IconButton Image="Settings.png" Text="Settings" x:Name="btnSettings" HorizontalOptions="Fill"

@@ -34,32 +34,14 @@
 
                 </Grid>
 
-                <StackLayout>
-                    <Frame BorderColor="Black" >
-                        <Grid Margin="15" Padding="0" x:Name="dgvAppointment">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0.5*"/>
-                                <ColumnDefinition Width="0.5*"/>
-                                <ColumnDefinition Width="0.5*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="50"/>
-                                <RowDefinition Height="50"/>
-                                <RowDefinition Height="50"/>
-                            </Grid.RowDefinitions>
-
-
-                            <Label Text="Doctor" TextColor="DarkGray" Grid.Row="0"/>
-                            <Label Text="Speciality" TextColor="DarkGray" Grid.Row="0" Grid.Column="1"/>
-                            <Label Text="Date" TextColor="DarkGray" Grid.Row="0" Grid.Column="2"/>
-
-
-                        </Grid>
+                <ScrollView>
+                    <Frame x:Name="VisibleBox">
+                        <StackLayout x:Name="dgvAppointment">
+                        </StackLayout>
                     </Frame>
-                </StackLayout>
+                </ScrollView>
 
-            </StackLayout>
+        </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -8,6 +8,9 @@ namespace Hospital.Services
 {
     public static class CurrentUser
     {
+        public delegate void StartCurrentUser();
+
+        public static StartCurrentUser start;
         public static User CurUser { get; set;}
         public static void EnterAsUser(User user) => CurUser = user;
         public static void EnterAsGuest()
@@ -20,7 +23,6 @@ namespace Hospital.Services
             CurUser.Mail = null;
             CurUser.Level = -1;
         }
-        public static FileStream htmlfile { get; set; }
 
     }
 }

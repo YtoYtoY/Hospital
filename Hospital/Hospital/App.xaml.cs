@@ -4,37 +4,46 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Reflection;
 using System.IO;
+using Hospital.Services.Entitties;
+using SQLite;
 
 namespace Hospital
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = @"Users.sqlite";
-        public static FriendAsyncRepository database;
-        public static FriendAsyncRepository Database
+        public const string DATABASE_NAME = @"Users3.sqlite";
+        public static AsyncRepository database;
+        public static AsyncRepository Database
         {
             get
             {
-                if (database == null)
+                try
                 {
-                    // путь, по которому будет находиться база данных
-                    string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME);
-                    // если база данных не существует (еще не скопирована)
-                    if (!File.Exists(dbPath))
+                    if (database == null)
                     {
-                        // получаем текущую сборку
-                        var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
-                        // берем из нее ресурс базы данных и создаем из него поток
-                        using (Stream stream = assembly.GetManifestResourceStream($"Hospital.{DATABASE_NAME}"))
+                        // путь, по которому будет находиться база данных
+                        string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME);
+                        // если база данных не существует (еще не скопирована)
+                        if (!File.Exists(dbPath))
                         {
-                            using (FileStream fs = new FileStream(dbPath, FileMode.OpenOrCreate))
+                            // получаем текущую сборку
+                            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
+                            // берем из нее ресурс базы данных и создаем из него поток
+                            using (Stream stream = assembly.GetManifestResourceStream($"Hospital.{DATABASE_NAME}"))
                             {
-                                stream.CopyTo(fs);  // копируем файл базы данных в нужное нам место
-                                fs.Flush();
+                                using (FileStream fs = new FileStream(dbPath, FileMode.OpenOrCreate))
+                                {
+                                    stream.CopyTo(fs);  // копируем файл базы данных в нужное нам место
+                                    fs.Flush();
+                                }
                             }
                         }
+                        database = new AsyncRepository(dbPath);
                     }
-                    database = new FriendAsyncRepository(dbPath);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
                 }
                 return database;
             }

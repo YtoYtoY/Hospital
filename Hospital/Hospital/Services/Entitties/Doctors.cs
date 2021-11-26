@@ -16,18 +16,9 @@ namespace Hospital.Services.Entitties
         [Column("d_specialization")]
         public string Specialization { get; set; }
         [Column("d_start")]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
         [Column("d_end")]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
-
-        public void SetData(SqliteDataReader reader)
-        {
-            Id = Convert.ToInt32(reader.GetValue(0));
-            Name = reader.GetValue(1).ToString();
-            Specialization = reader.GetValue(2).ToString();
-            StartTime = Convert.ToDateTime(reader.GetValue(3));
-            EndTime = Convert.ToDateTime(reader.GetValue(4));
-        }
     }
 }

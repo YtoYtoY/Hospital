@@ -17,15 +17,9 @@ namespace Hospital.Services.Entitties
         public string Name { get; set; }
         [Column("c_adress")]
         public string Address { get; set; }
+        [Column("c_birth")]
+        public string Birth { get; set; }
 
-        public void SetData(SqliteDataReader reader)
-        {
-            Id = Convert.ToInt32(reader.GetValue(0));
-            UserId = Convert.ToInt32(reader.GetValue(1));
-            Name = reader.GetValue(2).ToString();
-            Address = reader.GetValue(3).ToString();
-
-        }
     }
 
 

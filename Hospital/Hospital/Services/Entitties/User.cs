@@ -22,15 +22,6 @@ namespace Hospital.Services.Entitties
         [Column("u_passport")]
         public string Passport { get; set; }
 
-        public void SetData(SqliteDataReader reader)
-        {
-            Id = Convert.ToInt32(reader.GetValue(0));
-            MedCardId = Convert.ToInt32(reader.GetValue(1));
-            Login = reader.GetValue(2).ToString();
-            Password = reader.GetValue(3).ToString();
-            Mail = reader.GetValue(4).ToString();
-            Level = Convert.ToInt32(reader.GetValue(5));
-            Passport = reader.GetValue(5).ToString();
-        }
+      
     }
 }

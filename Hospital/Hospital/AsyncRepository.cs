@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Hospital
 {
-    public class FriendAsyncRepository
+    public class AsyncRepository
     {
         SQLiteAsyncConnection database;
 
-        public FriendAsyncRepository(string databasePath)
+        public AsyncRepository(string databasePath)
         {
             database = new SQLiteAsyncConnection(databasePath);
         }

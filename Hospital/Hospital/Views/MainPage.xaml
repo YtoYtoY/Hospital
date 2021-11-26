@@ -79,17 +79,9 @@
                                     <TapGestureRecognizer Command="{Binding GoToRegistration}"/>
                                 </Label.GestureRecognizers>
                             </Label>
-
-                            <!--<Label Text="or" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>-->
+                            
                         </StackLayout>
 
-                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="Login as 'Guest'" HorizontalTextAlignment="Center" TextColor="HotPink"  FontAttributes="Bold" VerticalTextAlignment="Center">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding LoginAsGuest}"/>
-                                </Label.GestureRecognizers>
-                            </Label>
-                        </StackLayout>-->
 
                         <StackLayout>
                             <Grid>
